@@ -1,0 +1,31 @@
+ #log {
+     background: #653E8C;
+     height: 100;
+     width: 100%;
+ }
+
+
+ .login-container {
+     background: rgba(255, 255, 255, 0.1);
+     padding: 30px;
+     border-radius: 10px;
+     backdrop-filter: blur(10px);
+ }
+
+ .login-container h2 {
+     color: #FFA500;
+ }
+
+ .btn-custom {
+     background-color: #FFA500;
+     color: white;
+     border: none;
+ }
+
+ .btn-custom:hover {
+     background-color: #FF8500;
+ }
+
+ .text-custom {
+     color: #FFA500;
+ }
