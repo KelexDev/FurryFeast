@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../assets/Home.css';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -75,6 +76,18 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      Link para ir a Lista<br />
+      <Link to="/List" className="text-custom fw-bold">
+        Lista
+      </Link>
+      <br />
+      <br />
+
+      Link para ir a agregar<br />
+      <Link to="/AddProducts" className="text-custom fw-bold">
+        Agregar Producto
+      </Link>
 
 
       {/* <div className='container py-5 d-flex align-items-center justify-content-between compromiso-section row-6'>

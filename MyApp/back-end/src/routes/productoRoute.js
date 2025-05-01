@@ -1,8 +1,8 @@
 import { getAllp } from "../controller/productoController.js";
-import express from 'express'
+import express from 'express' //Contiene una funcion router que permite el enrutamiento  -Enrutamineto-Es gestionar los dso tipos de peticiones (Request y respond)
 
 const router = express.Router()
 
-router.get('/', getAllp)
+router.get('/List', getAllp)
 
 export default router;

@@ -4,6 +4,11 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import Login from './pages/Login'
+import List from './pages/productos/List'
+import AddProducts from './pages/productos/AddProducts'
+import Nosotros from './pages/Nosotros'
+
+
 
 
 
@@ -18,6 +23,10 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/Products' element={<Products />}/>
         <Route path ='/Login' element={<Login />}/>
+        <Route path = '/List' element ={<List />}/>
+        <Route path = '/AddProducts' element ={<AddProducts />}/>
+        <Route path = '/Nosotros' element ={<Nosotros />} />
+        
       </Routes>
       <Footer />
     </Router>
