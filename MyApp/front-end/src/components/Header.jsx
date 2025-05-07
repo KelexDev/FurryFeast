@@ -26,7 +26,7 @@ export default function Header() {
 
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" >
               <li className="nav-item"  >
-                <Link className="nav-link text-white  " to="/">Nosotros</Link> {/* Poner el link de la pagina de noosotros */}
+                <Link className="nav-link text-white  " to="/Nosotros">Nosotros</Link> {/* Poner el link de la pagina de noosotros */}
               </li>
 
               <li className="nav-item dropdown">

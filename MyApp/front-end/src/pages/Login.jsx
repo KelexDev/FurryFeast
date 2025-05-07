@@ -9,6 +9,10 @@ export default function Login() {
         <>
             <div id='log'>
                 <div className="container"  >
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                     <div className="row align-items-center">
 
                         <div className="col-6 text-white">
@@ -46,6 +50,14 @@ export default function Login() {
 
                                     <div className="text-center">
                                         <button className="btn btn-custom">Iniciar Sesión</button>
+                                    </div>
+
+        
+
+                                    <br />
+                                    <div className="text-center">
+                                        <p>O si no tienes cuenta</p>
+                                        <button className="btn btn-custom">Registrate aquí</button>
                                     </div>
 
                                 </form>
