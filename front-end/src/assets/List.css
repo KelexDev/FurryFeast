@@ -1,0 +1,19 @@
+.table thead tr th {
+    background-color: #211E7B !important;
+    color: white;
+  }
+  
+    .btn-morado {
+      background-color: #211E7B;
+      color: white;
+      border: none;
+    }
+  
+    .btn-morado:hover {
+      background-color: #080633; 
+    }
+  
+    .custom-table thead th {
+      background-color: #211E7B; 
+      color: white; 
+    }

@@ -1,0 +1,17 @@
+
+
+#btnp{
+    background-color: #211E7B;
+    color: white;
+}
+
+#imgp {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #cont {
+    /* background-image: url('/p2.png');  */
+    background-size: cover;
+    color: white;
+  }
