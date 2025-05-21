@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../assets/Login.css';
+import axios from 'axios';
 
 export default function Login() {
+    const [correo, setCorreo] = useState('');
+    const [password, setPassword] = useState('');
+    const [msg, setMsg] = useState('');
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setMsg('');
+        try {
+            const res = await axios.post('http://localhost:3000/api/auth/login', {
+                correo,
+                password
+            });
+            localStorage.setItem('user', JSON.stringify(res.data));
+            // Redirigir según el nombre
+            if (res.data.nombre && res.data.nombre.trim().toLowerCase() === 'admin') {
+                navigate('/Administrador');
+            } else {
+                navigate('/Participante');
+            }
+        } catch (err) {
+            setMsg(err.response?.data?.msg || 'Error de conexión');
+        }
+    };
+
     return (
         <>
             <div id='log'>
@@ -17,12 +43,18 @@ export default function Login() {
 
                         <div className="col-6 text-white">
                             <h1 className="fw-bold">Iniciar sesión</h1>
-                             <p>
+                            <p>
                                 ¿Olvidaste la contraseña?<br />
                                 <Link to="/Administrador" className="text-custom fw-bold">
                                     RECUPERAR CONTRASEÑA
                                 </Link>
-                            </p> 
+                            </p>
+                            <p>
+                                PARTICIPANTE<br />
+                                <Link to="/Participante" className="text-custom fw-bold">
+                                    RECUPERAR CONTRASEÑA
+                                </Link>
+                            </p>
                             <p>
                                 El software de inventarios más óptimo y eficaz para que realices
                                 las votaciones para tu empresa.
@@ -32,39 +64,46 @@ export default function Login() {
                         <div className="col-6 d-flex justify-content-center mb-3">
                             <div className="login-container p-4 text-white w-75">
                                 <h2 className="text-center">Login</h2>
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div>
                                         <label className="form-label">
-                                            Username
+                                            Correo
                                         </label>
-                                        <input type="text" className="form-control" id="username" placeholder="Usuario" />
+                                        <input
+                                            type="email"
+                                            className="form-control"
+                                            placeholder="Correo"
+                                            value={correo}
+                                            onChange={e => setCorreo(e.target.value)}
+                                            required
+                                        />
                                     </div>
                                     <br />
                                     <div>
                                         <label className="form-label">
-                                            Password
+                                            Contraseña
                                         </label>
-                                        <input type="password" className="form-control" id="password" placeholder="Contraseña" />
+                                        <input
+                                            type="password"
+                                            className="form-control"
+                                            placeholder="Contraseña"
+                                            value={password}
+                                            onChange={e => setPassword(e.target.value)}
+                                            required
+                                        />
                                     </div>
                                     <br />
 
                                     <div className="text-center">
-                                        <button className="btn btn-custom">Iniciar Sesión</button>
+                                        <button className="btn btn-custom" type="submit">Iniciar Sesión</button>
                                     </div>
-
-        
-
-                                    {/* <br />
-                                    <div className="text-center">
-                                        <p>O si no tienes cuenta</p>
-                                        <button className="btn btn-custom">Registrate aquí</button>
-                                    </div> */}
-
+                                    {msg && <div className="alert alert-danger mt-3">{msg}</div>}
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+                <br /><br /><br /> <br />
             </div>
         </>
     );

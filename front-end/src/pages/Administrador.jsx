@@ -42,9 +42,8 @@ export default function Administrador() {
                             <thead className="table-dark">
                                 <tr>
                                     <th scope="col" className="text-center">Nombre</th>
-                                    <th scope="col" className="text-center">Apellido</th>
-                                    <th scope="col" className="text-center">DNI</th>
-                                    <th scope="col" className="text-center">Voto</th>
+                                    <th scope="col" className="text-center">N° Documento</th>
+                                    <th scope="col" className="text-center">Respuesta</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,7 +51,6 @@ export default function Administrador() {
                                     <td className="text-center">Ejemplo</td>
                                     <td className="text-center">Usuario</td>
                                     <td className="text-center">12345678</td>
-                                    <td className="text-center"></td>
                                 </tr>
                             </tbody>
                         </table>
